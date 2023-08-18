@@ -10,7 +10,26 @@ const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=${co
 let resultsArray = [];
 
 function updateDOM() {
-  resultsArray.forEach((result) => {});
+  resultsArray.forEach((result) => {
+    //card container
+    const card = document.createElement("div");
+    card.classList.add("card");
+    //link
+    const link = document.createElement("a");
+    link.href = result.hdurl;
+    link.title = "View Full Image";
+    link.target = "_blank";
+    //image
+    const image = document.createElement("img");
+    image.src = result.url;
+    image.alt = "NASA Pic of the day";
+    image.loading = "lazy";
+    image.classList.add("card-img-top");
+
+    //card body
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+  });
 }
 
 // Get 10 images from NASA API
