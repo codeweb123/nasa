@@ -29,6 +29,14 @@ function updateDOM() {
     //card body
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
+
+    //card title
+    const cardTitle = document.createElement("h5");
+    cardTitle.classList.add("card-tile");
+    cardTitle.textContent = result.title;
+    const saveText = document.createElement("p");
+    saveText.classList.add("clickable");
+    saveText.textContent = "Add to Favorites";
   });
 }
 
